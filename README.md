@@ -1,25 +1,21 @@
-<p align="center">
-<a href="https://prow.build-infra.jetstack.net/?job=post-preflight-release-canary">
-<!-- prow build badge, godoc, and go report card-->
-<img alt="Build Status" src="https://prow.build-infra.jetstack.net/badge.svg?jobs=post-preflight-release-canary">
-</a>
-<a href="https://godoc.org/github.com/jetstack/preflight"><img src="https://godoc.org/github.com/jetstack/preflight?status.svg"></a>
-<a href="https://goreportcard.com/report/github.com/jetstack/preflight"><img alt="Go Report Card" src="https://goreportcard.com/badge/github.com/jetstack/preflight" /></a>
-</p>
+# Jetstack Secure Agent
 
-# Jetstack Preflight
+[![release-master](https://github.com/jetstack/preflight/actions/workflows/release-master.yml/badge.svg)](https://github.com/jetstack/preflight/actions/workflows/release-master.yml)
+[![Go Reference](https://pkg.go.dev/badge/github.com/jetstack/preflight.svg)](https://pkg.go.dev/github.com/jetstack/preflight)
+[![Go Report Card](https://goreportcard.com/badge/github.com/jetstack/preflight)](https://goreportcard.com/report/github.com/jetstack/preflight)
 
-Preflight is a tool to automatically perform Kubernetes cluster configuration
+
+The Jetstack Secure Agent is a tool to automatically perform Kubernetes cluster configuration
 checks using [Open Policy Agent (OPA)](https://www.openpolicyagent.org/).
 
-This repository hosts the agent part of Preflight. It sends data to the [Preflight SaaS](https://preflight.jetstack.io) platform.
+This repository hosts the agent part of Jetstack Secure. It sends data to the [Jetstack Secure SaaS](https://platform.jetstack.io) platform.
 
 <!-- markdown-toc start - Don't edit this section. Run M-x
 markdown-toc-refresh-toc -->
 
 **Table of Contents**
 
-* [Jetstack Preflight](#jetstack-preflight)
+* [Jetstack Secure Agent](#jetstack-secure-agent)
    * [Project Background](#project-background)
    * [Agent](#agent)
    * [Packages](#packages)
@@ -29,7 +25,7 @@ markdown-toc-refresh-toc -->
 
 ## Project Background
 
-Preflight was originally designed to automate Jetstack's production readiness
+Jetstack Secure was originally designed to automate Jetstack's production readiness
 assessments.
 These are consulting sessions in which a Jetstack engineer inspects a customer's
 cluster to suggest improvements and identify configuration issues.
@@ -46,7 +42,7 @@ new interesting use cases as policy compliance audits.
 
 ## Agent
 
-The Preflight _agent_ uses _data gatherers_ to collect required data from
+The Jetstack Secure _agent_ uses _data gatherers_ to collect required data from
 Kubernetes and cloud provider APIs before formatting it as JSON for analysis.
 Once data has been collected, it is sent to the configured backend.
 
@@ -74,11 +70,11 @@ go run main.go echo
 
 ## Packages
 
-Policies for cluster configuration are encoded into *Preflight packages*.  Each
+Policies for cluster configuration are encoded into *Jetsack Secure packages*.  Each
 package focuses on a different infrastructure component, for example the `gke`
 package provides rules for the configuration of a GKE cluster.
 
-Preflight packages are implemented using
+Jetstack Secure packages are implemented using
 [Open Policy Agent](https://www.openpolicyagent.org) with evaluation
 taking place in the SaaS backend.
 
